@@ -95,7 +95,7 @@ const Register = () => {
             .catch(error => {
                 Swal.fire({
                     title: "Registration Error",
-                    text: `We encountered an error while trying to register with gmail. Please try again letter. (Error: ${error.message})`,
+                    text: `We encountered an error while trying to register with gmail account. Please try again letter. (Error: ${error.message})`,
                     icon: "error"
                 });
             })
@@ -103,7 +103,6 @@ const Register = () => {
 
     return (
         <main>
-
             <div className="flex flex-col items-center justify-center h-screen space-y-10">
                 <SectionTitle firstTitle="user" secondTitle="register"></SectionTitle>
 

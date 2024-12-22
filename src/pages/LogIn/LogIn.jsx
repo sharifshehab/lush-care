@@ -37,7 +37,7 @@ const LogIn = () => {
         } catch (error) {
             Swal.fire({
                 title: "Log-in Error",
-                text: `We encountered an error while trying to log in with gmail. Please try again letter. (Error: ${error.message})`,
+                text: `We encountered an error while trying to log in with gmail account. Please try again letter. (Error: ${error.message})`,
                 icon: "error"
             });
         } finally {
