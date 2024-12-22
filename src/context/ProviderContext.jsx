@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import {  createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import {  createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth";
 import app from "../firebase/firebase.init";
 
 
@@ -23,13 +23,51 @@ const ProviderContext = ({ children }) => {
         })
     }
 
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const handleEmailLogin = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const handleLogOut = () => {
+        setLoading(true);
+        return signOut(auth).then(() => {
+            // Sign-out successful.
+            console.log('user log-out successfully');
+        }).catch((error) => {
+            // An error happened.
+            console.log('there was an error while log-out');
+        });
+
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            setLoading(false);
+        });
+
+        return () => {
+            unsubscribe();
+        }
+    },[])
+
     const authInfo = {
         user,
         loading,
         setLoading,
         handleEmailRegister,
-        setNameAndPhoto
+        setNameAndPhoto,
+        handleEmailLogin,
+        handleGoogleSignIn,
+        handleLogOut
     }
+
 
     return (
         <AuthContext.Provider value={authInfo}>

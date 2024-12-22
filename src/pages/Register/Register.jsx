@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const { handleEmailRegister, setNameAndPhoto } = useAuth();
 
@@ -18,13 +18,18 @@ const Register = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+
                 setNameAndPhoto(data.name, data.photo)
                     .then(() => {
                         // Profile updated!
-                        console.log('name and photo set');
+                        console.log('Name and photo successfully set.');
                     }).catch((error) => {
                         // An error occurred
-                        console.log('error while setting name and photo');
+                        Swal.fire({
+                            title: "Profile Update Error",
+                            text: `We encountered an error while trying to set the user name and photo.  (Error: ${error.message})`,
+                            icon: "error"
+                        });
                     });
                 
                 reset();
@@ -54,8 +59,11 @@ const Register = () => {
 
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
+                Swal.fire({
+                    title: "Registration Error",
+                    text: `We encountered an error while registration. Please try again letter. (Error: ${error.message})`,
+                    icon: "error"
+                });
                 // ..
             });
 
@@ -64,9 +72,8 @@ const Register = () => {
     return (
         <main>
             <SectionTitle firstTitle="user" secondTitle="register"></SectionTitle>
-
-            <div className="flex items-center justify-center h-screen">
-                <form className="w-4/6" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex items-center justify-center h-screen ">
+                <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col sm:flex-row items-center gap-[30px]">
                         <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
                             <label className="text-lg ">Name</label>
