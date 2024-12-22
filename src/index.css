@@ -45,6 +45,8 @@ img {
 }
 
 h2 {
+  text-transform: capitalize;
+  color: var(--secondary-color);
   font-size: 2.375rem;
   font-weight: 800;
 }

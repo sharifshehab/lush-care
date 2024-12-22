@@ -1,10 +1,12 @@
 import React from 'react';
+import ServiceCard from '../shared/ServiceCard';
+import PopularServices from './PopularServices/PopularServices';
 
 const Home = () => {
     return (
-        <div>
-            <h1>content</h1>
-        </div>
+        <main>
+          <PopularServices></PopularServices>
+        </main>
     );
 };
 
