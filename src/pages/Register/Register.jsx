@@ -2,17 +2,16 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "../../components/SectionTitle";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
-    const { handleEmailRegister, setNameAndPhoto } = useAuth();
-
+    const { handleEmailRegister, handleGoogleSignIn, setNameAndPhoto } = useAuth();
     const navigate = useNavigate();
+    
+    let timerInterval;
 
     const onSubmit = data => {
-
 
         handleEmailRegister(data.email, data.password)
             .then((userCredential) => {
@@ -31,10 +30,9 @@ const Register = () => {
                             icon: "error"
                         });
                     });
-                
+
                 reset();
 
-                let timerInterval;
                 Swal.fire({
                     icon: "success",
                     title: "Registration Successful!",
@@ -64,15 +62,51 @@ const Register = () => {
                     text: `We encountered an error while registration. Please try again letter. (Error: ${error.message})`,
                     icon: "error"
                 });
-                // ..
             });
-
     };
+
+    const googleSignIn = () => {
+        handleGoogleSignIn()
+            .then(result => {
+                const user = result.user;
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Registration Successful!",
+                    html: "You'r being redirected to home page in <b>2</b> seconds.",
+                    timer: 2000,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = Math.ceil(Swal.getTimerLeft() / 1000);
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    },
+
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        navigate('/');
+                    }
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: "Registration Error",
+                    text: `We encountered an error while trying to register with gmail. Please try again letter. (Error: ${error.message})`,
+                    icon: "error"
+                });
+            })
+    }
 
     return (
         <main>
-            <SectionTitle firstTitle="user" secondTitle="register"></SectionTitle>
-            <div className="flex items-center justify-center h-screen ">
+
+            <div className="flex flex-col items-center justify-center h-screen space-y-10">
+                <SectionTitle firstTitle="user" secondTitle="register"></SectionTitle>
+
                 <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col sm:flex-row items-center gap-[30px]">
                         <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
@@ -133,6 +167,20 @@ const Register = () => {
                         </button>
                     </div>
                 </form>
+
+                <div className="flex items-center flex-col space-y-5">
+                    <button onClick={googleSignIn}
+                        className="bg-[#3B9DF8] text-white rounded py-[5px] pl-2 pr-4 flex items-center gap-3  hover:bg-blue-500 transition-all duration-200">
+                        <div className="p-2 rounded-full bg-white">
+                            <img src="https://i.ibb.co/dQMmB8h/download-4-removebg-preview-1.png"
+                                alt="google logo"
+                                className="w-[23px]" />
+                        </div>
+                        Sign in with Google
+                    </button>
+                    <p className="">Already have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/login'}>Login here</Link></span></p>
+                </div>
+
             </div>
         </main>
     );
