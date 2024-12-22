@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 
 const Header = () => {
@@ -43,14 +44,18 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
-                        <li><a>Services</a></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/'>Home</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/all-services'>Services</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/login'>LogIn</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/register'>Register</NavLink></li>
                         <li>
                             <details>
                                 <summary>Dashboard</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
+                                <ul className="">
+                                    <li className="static"><a>Add Services</a></li>
+                                    <li><a>Manage Services</a></li>
+                                    <li><a>Booked Services</a></li>
+                                    <li><a>Service-To-Do</a></li>
                                 </ul>
                             </details>
                         </li>
