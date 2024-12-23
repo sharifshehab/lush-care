@@ -52,11 +52,11 @@ const Header = () => {
                             <li>
                                 <details>
                                     <summary>Dashboard</summary>
-                                    <ul className="">
+                                    <ul className="z-10">
                                         <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/add-service'>Add Service</NavLink></li>
                                         <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/manage-services'>Manage Services</NavLink></li>
                                         <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/booked-services'>Booked Services</NavLink></li>
-                                        <li><a>Service-To-Do</a></li>
+                                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/current-services'>Service-To-Do</NavLink></li>
                                     </ul>
                                 </details>
                             </li>
