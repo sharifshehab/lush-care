@@ -1,4 +1,3 @@
-import img from "../../../assets/pexels-gaion-20534857.jpg";
 import img1 from "../../../assets/slides_2.jpg";
 import img2 from "../../../assets/spire1.webp";
 import img3 from "../../../assets/spire2.png";

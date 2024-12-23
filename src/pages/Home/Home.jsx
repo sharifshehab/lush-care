@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import PopularServices from './PopularServices/PopularServices';
 import Hero from './Hero/Hero';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
@@ -14,11 +15,20 @@ const Home = () => {
     }
   });
 
+  if (isPending) {
+    return <div className="flex items-center justify-center h-screen">
+      <span className="loading loading-ring loading-lg text-primaryColor"></span>
+    </div>
+  }
+
   return (
-    <main>
+    <>
+      <Helmet><title>LushCare - Home</title></Helmet>
+      <main>
         <Hero></Hero>
-      <PopularServices services={services}></PopularServices>
-    </main>
+        <PopularServices services={services}></PopularServices>
+      </main>
+    </>
   );
 };
 

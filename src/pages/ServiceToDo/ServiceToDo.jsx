@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import SectionTitle from "../../components/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
 const ServiceToDo = () => {
     const { user } = useAuth();
@@ -11,11 +12,10 @@ const ServiceToDo = () => {
     const { data: myBookings = [], isPending, refetch } = useQuery({
         queryKey: ['bookings', user.email],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/booked-services?email=${user.email}`);
+            const res = await axiosPublic.get(`/booked-services?email=${user.email}&role=provider`);
             return res.data;
         }
     });
-
 
     const handleAction = (id, status) => {
 
@@ -34,46 +34,58 @@ const ServiceToDo = () => {
         })
     }
 
+    if (isPending) {
+        return <div className="flex items-center justify-center h-screen">
+            <span className="loading loading-ring loading-lg text-primaryColor"></span>
+        </div>
+    }
+    
     return (
-        <main>
-            <section className="container mx-auto px-4">
-            <SectionTitle firstTitle="Scheduled" secondTitle="services"></SectionTitle>
-                <div className="overflow-x-auto">
-                    <table className="table">
-                        {/* head */}
-                        <thead>
-                            <tr>
-                                <th>Service Name</th>
-                                <th>Service Date</th>
-                                <th>Service Price</th>
-                                <th>Service Status</th>
-                                <th>Customer Email</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {/* row */}
-                            {myBookings.map(booking =>
-                                <tr key={booking._id}>
-                                    <td>{booking.serviceName}</td>
-                                    <td>{booking.date}</td>
-                                    <td>$ {booking.servicePrice}</td>
-                                    <td>{booking.serviceStatus}</td>
-                                    <td>{booking.customerEmail}</td>
-                                    <td>
-                                        <select onChange={(e) => handleAction(booking._id, e.target.value)} defaultValue={booking.serviceStatus} className="select select-bordered w-full max-w-xs" disabled={booking.serviceStatus === "completed"}>
-                                            <option value="pending">pending</option>
-                                            <option value="working">working</option>
-                                            <option value="completed">completed</option>
-                                        </select>
-                                    </td>
+        <>
+            <Helmet><title>LushCare - Scheduled Services</title></Helmet>
+            <main>
+                <section className="container mx-auto px-4 h-screen">
+                    <SectionTitle firstTitle="Scheduled" secondTitle="services"></SectionTitle>
+                    <div className="overflow-x-auto mt-14">
+                        <table className="table">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th>Service Name</th>
+                                    <th>Service Date</th>
+                                    <th>Service Price</th>
+                                    <th>Service Status</th>
+                                    <th>Customer Email</th>
+                                    <th>Action</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </main>
+                            </thead>
+                            <tbody>
+                                {/* row */}
+                                {
+                                    myBookings.length === 0 ? <tr><td className="text-center py-4" colSpan="6"><h2 className="text-lg text-primaryColor">no services is scheduled</h2></td></tr>
+                                        :
+                                        myBookings.map(booking =>
+                                            <tr key={booking._id}>
+                                                <td>{booking.serviceName}</td>
+                                                <td>{booking.date}</td>
+                                                <td>$ {booking.servicePrice}</td>
+                                                <td>{booking.serviceStatus}</td>
+                                                <td>{booking.customerEmail}</td>
+                                                <td>
+                                                    <select onChange={(e) => handleAction(booking._id, e.target.value)} defaultValue={booking.serviceStatus} className="select select-bordered w-full max-w-xs" disabled={booking.serviceStatus === "completed"}>
+                                                        <option value="pending">pending</option>
+                                                        <option value="working">working</option>
+                                                        <option value="completed">completed</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        )}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </>
     );
 };
 
