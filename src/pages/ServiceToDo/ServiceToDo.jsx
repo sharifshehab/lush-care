@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import SectionTitle from "../../components/SectionTitle";
 
 const ServiceToDo = () => {
     const { user } = useAuth();
@@ -36,7 +37,7 @@ const ServiceToDo = () => {
     return (
         <main>
             <section className="container mx-auto px-4">
-
+            <SectionTitle firstTitle="Scheduled" secondTitle="services"></SectionTitle>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
@@ -60,7 +61,7 @@ const ServiceToDo = () => {
                                     <td>{booking.serviceStatus}</td>
                                     <td>{booking.customerEmail}</td>
                                     <td>
-                                        <select onChange={(e) => handleAction(booking._id, e.target.value)} defaultValue={booking.serviceStatus} className="select select-bordered w-full max-w-xs">
+                                        <select onChange={(e) => handleAction(booking._id, e.target.value)} defaultValue={booking.serviceStatus} className="select select-bordered w-full max-w-xs" disabled={booking.serviceStatus === "completed"}>
                                             <option value="pending">pending</option>
                                             <option value="working">working</option>
                                             <option value="completed">completed</option>

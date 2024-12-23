@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import PopularServices from './PopularServices/PopularServices';
+import Hero from './Hero/Hero';
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
@@ -13,11 +14,12 @@ const Home = () => {
     }
   });
 
-    return (
-        <main>
-        <PopularServices services={services}></PopularServices>
-        </main>
-    );
+  return (
+    <main>
+        <Hero></Hero>
+      <PopularServices services={services}></PopularServices>
+    </main>
+  );
 };
 
 export default Home;

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
+import SectionTitle from "../../components/SectionTitle";
 
 const BookedServices = () => {
     const { user } = useAuth();
@@ -16,6 +17,7 @@ const BookedServices = () => {
     return (
         <main>
             <section className="container mx-auto px-4">
+                <SectionTitle firstTitle="my" secondTitle="bookings"></SectionTitle>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
