@@ -1,5 +1,5 @@
 
-const TableRow = ({ service }) => {
+const TableRow = ({ service, handleDelete }) => {
     const { _id, name, image, area, price, description } = service
     return (
         <tr>
@@ -29,7 +29,7 @@ const TableRow = ({ service }) => {
                     <button className="btn btn-neutral btn-xs">Edit</button>
                     <span className="hidden md:table-cell">|</span>
                     <span className="table-cell md:hidden">-</span>
-                    <button className="btn btn-warning btn-xs">details</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-warning btn-xs">Delete</button>
                 </div>
             </th>{/* action */}
         </tr>

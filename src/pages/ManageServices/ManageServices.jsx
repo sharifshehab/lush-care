@@ -3,6 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import TableRow from "./TableRow/TableRow";
+import Swal from "sweetalert2";
 
 const ManageServices = () => {
     const { user } = useAuth();
@@ -17,7 +18,34 @@ const ManageServices = () => {
         }
     });
 
-    // console.log(myService);
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure you want to delete this?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#87b303",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                axiosPublic.delete(`/service/${id}`)
+                    .then(res => {
+                        console.log();
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your service has been deleted.",
+                                icon: "success",
+                                confirmButtonColor: "#87b303"
+                            });
+                            refetch();
+                        }
+                    })
+            }
+        });
+    }
 
     return (
         <main>
@@ -37,7 +65,7 @@ const ManageServices = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {myService.map(service => <TableRow key={service._id} service={service}></TableRow>)}
+                            {myService.map(service => <TableRow key={service._id} service={service} handleDelete={handleDelete}></TableRow>)}
                         </tbody>
                     </table>
                 </div>
