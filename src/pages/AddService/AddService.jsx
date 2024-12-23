@@ -107,7 +107,6 @@ const AddService = () => {
                         ></textarea>
                     </div>
 
-
                     <div className="w-full flex items-center justify-center  mt-5">
                         <button type="submit"
                             className={`py-2.5 px-6 bg-gray-800 border transition-all duration-300 hover:border-gray-800 hover:text-gray-800 hover:bg-transparent text-white rounded-md text-lg mt-[10px] w-max`}>
@@ -115,9 +114,6 @@ const AddService = () => {
                         </button>
                     </div>
                 </form>
-
-
-
             </div>
         </main>
     );
