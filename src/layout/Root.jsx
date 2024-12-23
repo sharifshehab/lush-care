@@ -3,6 +3,7 @@ import Header from "../pages/shared/Header";
 import Footer from "../pages/shared/Footer";
 
 const Root = () => {
+
     return (
         <>
             <Header></Header>

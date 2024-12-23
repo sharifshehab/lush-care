@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 
 const ManageServices = () => {
     const { user } = useAuth();
-    const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
     const [isModalOpen, setisModalOpen] = useState(false);
     const [currentData, setCurrentData] = useState(null);
 

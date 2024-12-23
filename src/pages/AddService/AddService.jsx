@@ -3,11 +3,15 @@ import SectionTitle from "../../components/SectionTitle";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { useQueryClient } from "@tanstack/react-query";
+
 
 const AddService = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
     const axiosPublic = useAxiosPublic();
+    const queryClient = useQueryClient();
+
 
     const onSubmit = data => {
 
@@ -25,6 +29,7 @@ const AddService = () => {
         axiosPublic.post('/services', serviceData)
             .then(res => {
                 reset();
+                queryClient.invalidateQueries(['services']);
                 Swal.fire({
                     title: "Service Added Successfully",
                     text: `${data.name}, is now added to the services`,
@@ -95,7 +100,7 @@ const AddService = () => {
                                 {...register("price", { required: "Service price is required" })}
                                 placeholder="Write service price"
                             />
-                            {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+                            {errors.price && <span className="text-red-500 text-sm">{errors.price.message}</span>}
                         </div>
                     </div>
 
