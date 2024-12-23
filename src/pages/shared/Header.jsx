@@ -55,7 +55,7 @@ const Header = () => {
                                     <ul className="">
                                         <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/add-service'>Add Service</NavLink></li>
                                         <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/manage-services'>Manage Services</NavLink></li>
-                                        <li><a>Booked Services</a></li>
+                                        <li><NavLink className={({ isActive }) => isActive ? 'active-menu' : 'hover:text-yellow-300'} to='/booked-services'>Booked Services</NavLink></li>
                                         <li><a>Service-To-Do</a></li>
                                     </ul>
                                 </details>

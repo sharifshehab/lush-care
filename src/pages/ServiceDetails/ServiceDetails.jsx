@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-
 import { useEffect, useState } from "react";
 import { BiLike } from "react-icons/bi";
 import { BsEye, BsThreeDotsVertical } from "react-icons/bs";
@@ -47,9 +46,8 @@ const ServiceDetails = () => {
             servicePrice: data.price,
             providerName: data.providerName,
             providerEmail: data.providerEmail,
-            providerEmail: data.providerEmail,
-            customerName: data.myName,
-            customerEmail: data.myEmail,
+            customerName: user.displayName,
+            customerEmail: user.email,
             date: data.date,
             instruction: data.instruction,
             serviceStatus: "pending"
@@ -73,6 +71,8 @@ const ServiceDetails = () => {
                 });
             })
     };
+
+    
 
     return (
         <main>
