@@ -8,6 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ManageServices = () => {
     const { user } = useAuth();
@@ -17,11 +18,12 @@ const ManageServices = () => {
 
     // TODO: use axios secure
     const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
 
     const { data: myService = [], isPending, refetch } = useQuery({
         queryKey: ['services', user.email],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/services?email=${user.email}`);
+            const res = await axiosSecure.get(`/services?email=${user.email}`);
             return res.data;
         }
     });
@@ -113,7 +115,7 @@ const ManageServices = () => {
         <>
             <Helmet><title>LushCare - Manage Services</title></Helmet>
             <main>
-                <section className="container mx-auto h-screen">
+                <section className="container mx-auto min-h-screen">
                     <SectionTitle firstTitle="my" secondTitle="service"></SectionTitle>
                     <div className="p-8 mb-4 flex items-center gap-5 justify-center">
 

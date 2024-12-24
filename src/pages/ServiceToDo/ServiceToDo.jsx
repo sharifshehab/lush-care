@@ -4,15 +4,17 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import SectionTitle from "../../components/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ServiceToDo = () => {
     const { user } = useAuth();
     const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
 
     const { data: myBookings = [], isPending, refetch } = useQuery({
         queryKey: ['bookings', user.email],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/booked-services?email=${user.email}&role=provider`);
+            const res = await axiosSecure.get(`/booked-services?email=${user.email}&role=provider`);
             return res.data;
         }
     });
@@ -44,7 +46,7 @@ const ServiceToDo = () => {
         <>
             <Helmet><title>LushCare - Scheduled Services</title></Helmet>
             <main>
-                <section className="container mx-auto px-4 h-screen">
+                <section className="container mx-auto px-4 min-h-screen">
                     <SectionTitle firstTitle="Scheduled" secondTitle="services"></SectionTitle>
                     <div className="overflow-x-auto mt-14">
                         <table className="table">

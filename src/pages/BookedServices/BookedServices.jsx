@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
 import SectionTitle from "../../components/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const BookedServices = () => {
     const { user } = useAuth();
-    const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
 
     const { data: myBookings = [], isPending, refetch } = useQuery({
         queryKey: ['bookings', user.email],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/booked-services?email=${user.email}&role=customer`);
+            const res = await axiosSecure.get(`/booked-services?email=${user.email}&role=customer`);
             return res.data;
         }
     });
@@ -26,7 +26,7 @@ const BookedServices = () => {
         <>
             <Helmet><title>LushCare - Booked Services</title></Helmet>
             <main>
-                <section className="container mx-auto px-4 h-screen">
+                <section className="container mx-auto px-4 min-h-screen">
                     <SectionTitle firstTitle="my" secondTitle="bookings"></SectionTitle>
                     <div className="overflow-x-auto mt-14">
                         <table className="table">

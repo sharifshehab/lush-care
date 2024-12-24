@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import {  createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth";
 import app from "../firebase/firebase.init";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 export const AuthContext = createContext();
@@ -10,6 +11,7 @@ const auth = getAuth(app);
 const ProviderContext = ({ children }) => {
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
+    const axiosSecure = useAxiosSecure();
 
     const handleEmailRegister = (email, password) => {
         setLoading(true);
@@ -35,21 +37,30 @@ const ProviderContext = ({ children }) => {
     }
 
     const handleLogOut = () => {
-        setLoading(true);
-        return signOut(auth).then(() => {
-            // Sign-out successful.
-            console.log('user log-out successfully');
-        }).catch((error) => {
-            // An error happened.
-            console.log('there was an error while log-out');
-        });
-
+        // setLoading(true);
+        return signOut(auth);
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false);
+
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: userEmail }
+            
+            if (userEmail) {
+                axiosSecure.post('/jwt', loggedUser)
+                    .then(res => {
+                        console.log(res.data);
+                        setLoading(false);
+                })
+            }else{
+                axiosSecure.post('/logout', {})
+                    .then(res => {
+                        console.log(res.data);
+                        setLoading(false);
+                    })
+            }
         });
 
         return () => {
