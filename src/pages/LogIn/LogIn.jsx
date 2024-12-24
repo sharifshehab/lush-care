@@ -55,11 +55,11 @@ const LogIn = () => {
                     <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col items-center gap-[30px]">
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg ">Email</label>
+                                <label className="text-lg dark:text-primaryColor">Email</label>
                                 <input
                                     type="email"
                                     id="email"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("email", { required: "Email is required" })}
                                     placeholder="Write your email"
                                 />
@@ -67,11 +67,11 @@ const LogIn = () => {
                             </div>
 
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Password</label>
+                                <label className="text-lg dark:text-primaryColor">Password</label>
                                 <input
                                     type="password"
                                     id="password"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-gray-400 transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-gray-400 transition-colors duration-300 p-3"
                                     {...register("password", { required: "Password is required" })}
                                     placeholder="Write your password"
                                 />
@@ -97,7 +97,7 @@ const LogIn = () => {
                             </div>
                             Sign in with Google
                         </button>
-                        <p className="">Don't have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/register'}>Register here</Link></span></p>
+                        <p className="dark:text-white">Don't have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/register'}>Register here</Link></span></p>
                     </div>
                 </div>
             </main>

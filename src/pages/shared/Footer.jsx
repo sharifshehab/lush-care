@@ -58,9 +58,9 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="footer footer-center bg-secondaryColor text-base-content p-5">
+            <div className="footer footer-center bg-secondaryColor text-base-content p-5 dark:bg-white">
                 <aside>
-                    <p className="text-white">LushCare © {new Date().getFullYear()} - All Rights Reserved.</p>
+                    <p className="text-white dark:text-primaryColor">LushCare © {new Date().getFullYear()} - All Rights Reserved.</p>
                 </aside>
             </div>
         </footer>

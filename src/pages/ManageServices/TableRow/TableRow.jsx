@@ -2,7 +2,7 @@
 const TableRow = ({ service, handleDelete, handleModal }) => {
     const { _id, name, image, area, price, description } = service;
     return (
-            <tr>
+            <tr className="dark:text-primaryColor">
                 <td>
                     <div className="avatar">
                         <div className="mask mask-squircle h-12 w-12">

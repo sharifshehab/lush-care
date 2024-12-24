@@ -112,11 +112,11 @@ const Register = () => {
                     <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col sm:flex-row items-center gap-[30px]">
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg ">Name</label>
+                                <label className="text-lg dark:text-primaryColor">Name</label>
                                 <input
                                     type="text"
                                     id="name"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("name", { required: "Name is required", minLength: { value: 5, message: "minimum character length is 5" } })}
                                     placeholder="Write your name"
                                 />
@@ -124,11 +124,11 @@ const Register = () => {
                             </div>
 
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Email</label>
+                                <label className="text-lg dark:text-primaryColor">Email</label>
                                 <input
                                     type="email"
                                     id="email"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("email", { required: "Email is required" })}
                                     placeholder="Write your email"
                                 />
@@ -138,11 +138,11 @@ const Register = () => {
 
                         <div className="flex flex-col sm:flex-row items-center gap-[30px] mt-10">
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Photo</label>
+                                <label className="text-lg dark:text-primaryColor">Photo</label>
                                 <input
                                     type="url"
                                     id="photo"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("photo", { required: "Photo is required" })}
                                     placeholder="Past photo url"
                                 />
@@ -150,11 +150,11 @@ const Register = () => {
                             </div>
 
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Password</label>
+                                <label className="text-lg dark:text-primaryColor">Password</label>
                                 <input
                                     type="password"
                                     id="password"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("password", { required: "password is required", pattern: { value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/, message: "Password must contain at least one uppercase, one lowercase, one number and should be 8 character long" } })}
                                     placeholder="Write password"
                                 />
@@ -164,7 +164,7 @@ const Register = () => {
 
                         <div className="w-full flex items-center justify-center  mt-5">
                             <button type="submit"
-                                className="py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300">
+                                className="py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300 p-3">
                                 Register
                             </button>
                         </div>
@@ -180,7 +180,7 @@ const Register = () => {
                             </div>
                             Sign in with Google
                         </button>
-                        <p className="">Already have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/login'}>Login here</Link></span></p>
+                        <p className="dark:text-white">Already have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/login'}>Login here</Link></span></p>
                     </div>
 
                 </div>

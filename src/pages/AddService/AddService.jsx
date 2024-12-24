@@ -57,11 +57,11 @@ const AddService = () => {
                     <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col sm:flex-row items-center gap-[30px]">
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg ">Service Name</label>
+                                <label className="text-lg dark:text-primaryColor">Service Name</label>
                                 <input
                                     type="text"
                                     id="name"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("name", { required: "Service Name is required" })}
                                     placeholder="Write service name"
                                 />
@@ -69,11 +69,11 @@ const AddService = () => {
                             </div>
 
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Service Image</label>
+                                <label className="text-lg dark:text-primaryColor">Service Image</label>
                                 <input
                                     type="url"
                                     id="image"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("image", { required: "Service Image is required" })}
                                     placeholder="Past image url"
                                 />
@@ -83,11 +83,11 @@ const AddService = () => {
 
                         <div className="flex flex-col sm:flex-row items-center gap-[30px] mt-10">
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Service Area</label>
+                                <label className="text-lg dark:text-primaryColor">Service Area</label>
                                 <input
                                     type="text"
                                     id="area"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("area", { required: "Service area is required" })}
                                     placeholder="Write service area"
                                 />
@@ -95,11 +95,11 @@ const AddService = () => {
                             </div>
 
                             <div className="flex flex-col gap-[5px] w-full sm:w-[50%]">
-                                <label className="text-lg text-gray-700">Service Price</label>
+                                <label className="text-lg dark:text-primaryColor">Service Price</label>
                                 <input
                                     type="number"
                                     id="price"
-                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300"
+                                    className="peer border-gray-300 border-b outline-none focus:border-primaryColor w-full text-primaryColor transition-colors duration-300 p-3"
                                     {...register("price", { required: "Service price is required" })}
                                     placeholder="Write service price"
                                 />
@@ -108,16 +108,16 @@ const AddService = () => {
                         </div>
 
                         <div className="flex flex-col gap-[5px] w-full mt-10">
-                            <label className="text-[1rem] text-gray-700">Service Description</label>
+                            <label className="text-lg dark:text-primaryColor">Service Description</label>
                             <textarea
-                                className="peer min-h-[100px] border-gray-300 border-b resize-none outline-none w-full text-primaryColor transition-colors focus:border-primaryColor duration-300"
+                                className="peer min-h-[100px] border-gray-300 border-b resize-none outline-none w-full text-primaryColor transition-colors focus:border-primaryColor duration-300 p-3"
                                 {...register("description", { required: "Service description is required" })}
                             ></textarea>
                         </div>
 
                         <div className="w-full flex items-center justify-center  mt-5">
                             <button type="submit"
-                                className="py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300">
+                                className="py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300 p-3">
                                 Add Service
                             </button>
                         </div>

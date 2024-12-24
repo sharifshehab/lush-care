@@ -8,7 +8,7 @@ const SectionTitle = ({firstTitle = 'section', secondTitle='title'}) => {
                 <img src={lawnIcon} alt="" />
                 <img src={lineImg} alt="" />
             </div>
-            <h2 className="text-3xl md:text-[40px]">{firstTitle} <span className="text-primaryColor">{secondTitle}</span></h2>
+            <h2 className="text-3xl md:text-[40px] dark:text-white">{firstTitle} <span className="text-primaryColor">{secondTitle}</span></h2>
         </div>
     );
 };

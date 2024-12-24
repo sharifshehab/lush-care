@@ -52,7 +52,7 @@ const ServiceToDo = () => {
                         <table className="table">
                             {/* head */}
                             <thead>
-                                <tr>
+                                <tr className="dark:text-white">
                                     <th>Service Name</th>
                                     <th>Service Date</th>
                                     <th>Service Price</th>
@@ -67,7 +67,7 @@ const ServiceToDo = () => {
                                     myBookings.length === 0 ? <tr><td className="text-center py-4" colSpan="6"><h2 className="text-lg text-primaryColor">no services is scheduled</h2></td></tr>
                                         :
                                         myBookings.map(booking =>
-                                            <tr key={booking._id}>
+                                            <tr key={booking._id} className="dark:text-primaryColor">
                                                 <td>{booking.serviceName}</td>
                                                 <td>{booking.date}</td>
                                                 <td>$ {booking.servicePrice}</td>

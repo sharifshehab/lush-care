@@ -7,7 +7,7 @@ const PopularServices = ({ services }) => {
     return (
         <section className="container mx-auto px-4">
             <SectionTitle firstTitle="popular" secondTitle="service"></SectionTitle>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 mt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-6 mt-12">
                 {services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)}
             </div>
             <div className="text-center mt-10">
