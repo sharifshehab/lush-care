@@ -17,12 +17,12 @@ const Register = () => {
         handleEmailRegister(data.email, data.password)
             .then((userCredential) => {
                 // Signed up 
-                const user = userCredential.user;
+                // const user = userCredential.user;
 
                 setNameAndPhoto(data.name, data.photo)
                     .then(() => {
                         // Profile updated!
-                        console.log('Name and photo successfully set.');
+                        // console.log('Name and photo successfully set.');
                     }).catch((error) => {
                         // An error occurred
                         Swal.fire({

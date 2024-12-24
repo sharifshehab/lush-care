@@ -42,7 +42,6 @@ const ManageServices = () => {
             if (result.isConfirmed) {
                 axiosPublic.delete(`/service/${id}`)
                     .then(res => {
-                        console.log();
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -124,8 +123,8 @@ const ManageServices = () => {
                                 } w-full h-screen fixed top-0 left-0 z-50 bg-[#0000002a] transition-all duration-300 flex items-center justify-center`}
                         >
                             <div
-                                className={`${isModalOpen ? " scale-[1] opacity-100" : " scale-[0] opacity-0"
-                                    } w-[90%] md:w-[80%] lg:w-[35%] bg-[#fff] rounded-lg transition-all duration-300 mx-auto mt-8`}
+                                className={`${isModalOpen ? "scale-[1] opacity-100" : " scale-[0] opacity-0"
+                                    } w-[90%] md:w-[80%] lg:w-[35%] bg-white transition-all duration-300 mx-auto mt-8 rounded-none`}
                             >
                                 <div className="w-full flex items-end p-4 justify-between border-b border-primaryColor">
                                     <h1 className="text-2xl font-bold">

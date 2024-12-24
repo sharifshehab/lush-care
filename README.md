@@ -1,8 +1,15 @@
-# React + Vite
+# LushCare - Exceptional Lawn Services at Your Fingertips
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LushCare is a user-friendly platform designed to simplify your lawn care needs. We are dedicated to providing reliable, transparent, and timely lawn mowing services that fit your schedule and budget. Our website connects you with professional lawn mowing services tailored to your requirements. Find the most suitable and experienced lawn care providers in your area, And easily schedule your lawn mowing services online. Visit LushCare today and let us handle your lawn care while you enjoy your beautiful, stress-free yard!
 
-Currently, two official plugins are available:
+## Key features:
+1. **Toggle theme color between dark and light**
+2. **Private protected routes for only login/register users**
+3. **Search functionality with dropdown results**
+4. **User can add, edit, or delete their own services**
+5. **Manage service status booked by the customers**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Category: Lawn Mowing Services
+
+##  Live link:
+- **[lush-care](https://lush-care-f2f32.web.app)**

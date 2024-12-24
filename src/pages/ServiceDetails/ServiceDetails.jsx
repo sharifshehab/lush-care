@@ -227,7 +227,7 @@ const ServiceDetails = () => {
 
                                     <div className="w-full flex items-center justify-center  mt-5">
                                         <button type="submit"
-                                            className={`py-2.5 px-6 bg-gray-800 border transition-all duration-300 hover:border-gray-800 hover:text-gray-800 hover:bg-transparent text-white rounded-md text-lg mt-[10px] w-max`}>
+                                            className='py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300'>
                                             Purchase Service
                                         </button>
                                     </div>

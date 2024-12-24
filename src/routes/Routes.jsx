@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
             {
                 path: 'service-details/:serviceId',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/service/${params.serviceId}`);
+                    return fetch(`https://lush-care-server.vercel.app/service/${params.serviceId}`);
                 },
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
             },

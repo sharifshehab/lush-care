@@ -142,8 +142,8 @@ const Header = () => {
                                         strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </span>
                                 <span
-                                    className="absolute flex items-center justify-center w-full h-full  transition-all duration-300 transform group-hover:translate-x-full ease">Login</span>
-                                <span className="relative invisible">Login</span>
+                                    className="absolute flex items-center justify-center w-full h-full  transition-all duration-300 transform group-hover:translate-x-full ease dark:text-white">Login</span>
+                                <span className="relative invisible dark:text-white">Login</span>
                             </button>
                         </Link>
                     }
