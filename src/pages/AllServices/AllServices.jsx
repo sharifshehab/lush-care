@@ -48,7 +48,7 @@ const AllServices = () => {
                 <Breadcrumb></Breadcrumb>
                 <section className="container mx-auto px-4">
                     <SectionTitle firstTitle="all" secondTitle="services"></SectionTitle>
-                    {/* ---------------------- */}
+
                     <div className="relative w-full product_search_input my-5">
                         <input
                             className="px-4 py-2 border border-border w-full pl-10 outline-none focus:border-primaryColor"
@@ -76,16 +76,14 @@ const AllServices = () => {
                                 ))
                             }
 
-                            {/* {
-                                !filteredData?.length && (
-                                    <p className="text-[0.9rem] py-3 text-[#a0a0a0] text-center">No search matched!</p>
+                            {
+                                !services?.length && (
+                                    <p className="text-lg py-3 text-primaryColor text-center">No search result found!</p>
                                 )
-                            } */}
+                            }
                         </div>
-
                     </div>
-                    {/* ---------------- */}
-                    <div className="mt-12 space-y-12">
+                    <div className="mt-12 mb-40 space-y-12">
                         {services.map(service => <ServiceCard key={service._id} service={service} serviceArea={true}></ServiceCard>)}
                     </div>
                 </section>

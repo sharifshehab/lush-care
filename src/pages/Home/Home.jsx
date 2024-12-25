@@ -3,6 +3,8 @@ import useAxiosPublic from '../../hooks/useAxiosPublic';
 import PopularServices from './PopularServices/PopularServices';
 import Hero from './Hero/Hero';
 import { Helmet } from 'react-helmet-async';
+import About from './About/About';
+import Blog from './Blog/Blog';
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
@@ -26,7 +28,9 @@ const Home = () => {
       <Helmet><title>LushCare - Home</title></Helmet>
       <main>
         <Hero></Hero>
+        <About></About>
         <PopularServices services={services}></PopularServices>
+        <Blog></Blog>
       </main>
     </>
   );

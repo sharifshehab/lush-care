@@ -1,6 +1,7 @@
 import ServiceCard from "../../shared/ServiceCard";
 import SectionTitle from "../../../components/SectionTitle";
 import { Link, NavLink } from "react-router-dom";
+import Button from "../../../components/Button";
 
 const PopularServices = ({ services }) => {
     return (
@@ -10,7 +11,7 @@ const PopularServices = ({ services }) => {
                 {services.map(service => <ServiceCard key={service._id} service={service} maxCharacter={true}></ServiceCard>)}
             </div>
             <div className="text-center mt-10">
-                <Link to='/all-services'><button className="py-2 px-6 border border-primaryColor bg-primaryColor text-white hover:bg-white hover:text-primaryColor duration-300">Show All</button></Link>
+                <Link to='/all-services'><Button></Button></Link>
             </div>
         </section>
     );
