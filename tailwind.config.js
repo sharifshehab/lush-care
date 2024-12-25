@@ -13,7 +13,7 @@ export default {
         darkBg: '#0b0927',
       },
       backgroundImage: {
-        'aboutBG': "url('./images/bg.jpg')"
+        'breadcrumb': "url('./src/assets/breadcrumb.jpg')"
       },
     },
   },

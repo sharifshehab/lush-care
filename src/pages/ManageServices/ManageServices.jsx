@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Breadcrumb from "../shared/breadcrumb";
 
 const ManageServices = () => {
     const { user } = useAuth();
@@ -114,6 +115,7 @@ const ManageServices = () => {
         <>
             <Helmet><title>LushCare - Manage Services</title></Helmet>
             <main>
+                <Breadcrumb></Breadcrumb>
                 <section className="container mx-auto min-h-screen">
                     <SectionTitle firstTitle="my" secondTitle="service"></SectionTitle>
                     <div className="p-8 mb-4 flex items-center gap-5 justify-center">

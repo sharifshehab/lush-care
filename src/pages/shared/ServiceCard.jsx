@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ serviceArea, service }) => {
+const ServiceCard = ({ serviceArea, maxCharacter, service }) => {
     const { _id, name, image, area, price, description, provider_name, provider_email, provider_image } = service;
 
     return (
         <div className="shadow-md border-b-4 border-secondaryColor bg-primaryColor p-5 dark:border-white">
             <div className="flex items-center justify-between w-full p-4">
-                <h2 className="text-xl font-semibold text-white capitalize">{name}</h2>
+                <h2 className="text-lg md:text-2xl font-semibold text-white capitalize">{name}</h2>
                 <div className="flex items-center gap-[5px]">
-                    <h3 className="text-lg text-white font-semibold flex items-center gap-1 underline underline-offset-4 decoration-double">
+                    <h3 className="text-base md:text-[20px] text-white font-semibold flex items-center gap-1 underline underline-offset-4 decoration-double">
                         ${price}
                     </h3>
                 </div>
@@ -16,11 +16,11 @@ const ServiceCard = ({ serviceArea, service }) => {
             <img
                 src={image}
                 alt={name}
-                className="w-full"
+                className="w-full h-72 object-cover"
             />
 
             <div className="p-4">
-                <p className="text-white">{description}</p>
+                <p className="text-white">{maxCharacter ? `${description.slice(0, 100)}...` : description}</p>
                 <div className="mt-5 flex items-center justify-between w-full">
                     <div className="provider flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-primaryColor">

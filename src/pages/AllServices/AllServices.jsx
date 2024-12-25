@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { GoLinkExternal } from "react-icons/go";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../shared/breadcrumb";
 
 const AllServices = () => {
     const axiosPublic = useAxiosPublic();
@@ -21,47 +22,18 @@ const AllServices = () => {
         }
     });
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[])
+
     const [search, setSearch] = useState('');
+    const [inputFocus, setInputFocus] = useState(false);
 
     const [services, setServices] = useState(initialData);
-
-    // const handleSearch = (e) => {
-    //     e.preventDefault();
-    //     const searchText = e.target.search.value;
-    //     setSearch(searchText);
-    // }
-
     useEffect(() => {
-        axiosPublic.get(`http://localhost:5000/services?search=${search}`)
+        axiosPublic.get(`/services?search=${search}`)
             .then(res => setServices(res.data))
     }, [search]);
-
-    const [filteredData, setFilteredData] = useState(services)
-    const [inputText, setInputText] = useState("")
-    const [inputFocus, setInputFocus] = useState(true)
-
-    useEffect(() => {
-        const filtered = services?.filter((product) => {
-            if (inputText === "") {
-                return services
-            } else {
-                return product?.name.toLowerCase().includes(inputText)
-            }
-        })
-
-        setFilteredData(filtered)
-
-    }, [inputText]);
-
-
-    function truncate(text, maxLength, ellipsis = "...") {
-        if (text?.length <= maxLength) {
-            return text;
-        }
-        return text?.slice(0, maxLength - ellipsis?.length) + ellipsis;
-    }
-
-    /* ========================================================== */
 
     if (isPending) {
         return <div className="flex items-center justify-center h-screen">
@@ -73,41 +45,42 @@ const AllServices = () => {
         <>
             <Helmet><title>LushCare - All Services</title></Helmet>
             <main>
+                <Breadcrumb></Breadcrumb>
                 <section className="container mx-auto px-4">
                     <SectionTitle firstTitle="all" secondTitle="services"></SectionTitle>
                     {/* ---------------------- */}
                     <div className="relative w-full product_search_input my-5">
                         <input
-                            className="px-4 py-2 border border-border w-full pl-[40px] outline-none focus:border-primary"
-                            placeholder="Search..." onChange={(e) => setInputText(e.target.value)}
-                            onClick={() => setInputFocus(true)} />
+                            className="px-4 py-2 border border-border w-full pl-10 outline-none focus:border-primaryColor"
+                            placeholder="Search..." onChange={(e) => setSearch(e.target.value)}
+                            onClick={() => setInputFocus(!inputFocus)} />
                         <IoIosSearch className="absolute top-[9px] left-2 text-[1.5rem] text-[#adadad]" />
 
                         <div
-                            className={`${inputFocus ? "opacity-100 h-auto translate-y-0 mt-2" : "translate-y-[-10px] opacity-0 h-0"} product_search_bar bg-white boxShadow w-full transition-all duration-500 overflow-hidden flex flex-col rounded-md`}>
+                            className={`${inputFocus ? "opacity-100 h-auto translate-y-0 mt-2" : "translate-y-[-10px] opacity-0 h-0"} product_search_bar bg-white boxShadow w-full transition-all duration-500 overflow-hidden flex flex-col`}>
 
                             {
-                                filteredData?.map((product) => (
-                                    <div key={product?.id}
-                                        className="flex items-center justify-between w-full px-6 py-4 hover:bg-gray-50 cursor-pointer rounded-md">
-                                        <div className="flex items-center gap-[10px]">
-                                            <img src={product?.image}
-                                                alt="product/image"
+                                services?.map((service) => (
+                                    <div key={service?._id}
+                                        className="flex items-center justify-between w-full px-6 py-4 cursor-pointer border-b">
+                                        <div className="flex items-center gap-3">
+                                            <img src={service?.image}
+                                                alt={service?.image}
                                                 className="w-[30px] h-[30px] object-cover" />
-                                            <h1 className="text-[0.9rem] sm:text-[1.1rem] text-gray-700 font-[400]">{truncate(product?.name, 60)}</h1>
+                                            <h1 className="text-sm sm:text-lg">{service?.name}</h1>
                                         </div>
-                                        <Link to={`/service-details/${product?._id}`}>
-                                            <GoLinkExternal className="text-[1.3rem] text-gray-400" />
+                                        <Link to={`/service-details/${service?._id}`}>
+                                            <GoLinkExternal className="text-xl text-primaryColor" />
                                         </Link>
                                     </div>
                                 ))
                             }
 
-                            {
+                            {/* {
                                 !filteredData?.length && (
                                     <p className="text-[0.9rem] py-3 text-[#a0a0a0] text-center">No search matched!</p>
                                 )
-                            }
+                            } */}
                         </div>
 
                     </div>

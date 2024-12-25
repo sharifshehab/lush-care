@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 import { FaBarsStaggered } from "react-icons/fa6";
+import logo from "../../assets/logo2.png";
+
 
 const Header = () => {
     const { user, handleLogOut } = useAuth();
@@ -31,7 +33,7 @@ const Header = () => {
     }
 
     return (
-        <header className="dark:bg-darkBg">
+        <header className="border-b dark:bg-darkBg">
             <div className="top-header bg-primaryColor">
                 <div className="container mx-auto px-4 pt-3 md:pt-0 flex flex-col md:flex-row items-center justify-between gap-3">
                     <div className="flex items-center gap-5 text-white">
@@ -62,7 +64,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <nav className="navbar p-0 container mx-auto px-4">
+            <nav className="navbar container mx-auto px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -86,9 +88,9 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="text-xl dark:text-white">
-                        <img src="" alt="" />
-                        LushCare
+                    <a href="#" className="text-sm md:text-base font-bold flex flex-col items-center dark:text-white">
+                        <img src={logo} alt="" className="w-12 md:w-[70px] h-full"/>
+                        <p>Lush<span className="text-primaryColor font-extrabold">Care</span></p>
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

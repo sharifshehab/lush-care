@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import SectionTitle from "../../components/SectionTitle";
 import { Helmet } from "react-helmet-async";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Breadcrumb from "../shared/breadcrumb";
 
 const BookedServices = () => {
     const { user } = useAuth();
@@ -26,6 +27,7 @@ const BookedServices = () => {
         <>
             <Helmet><title>LushCare - Booked Services</title></Helmet>
             <main>
+                <Breadcrumb></Breadcrumb>
                 <section className="container mx-auto px-4 min-h-screen">
                     <SectionTitle firstTitle="my" secondTitle="bookings"></SectionTitle>
                     <div className="overflow-x-auto mt-14">
