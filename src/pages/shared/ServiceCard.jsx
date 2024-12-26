@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
-const ServiceCard = ({ serviceArea, maxCharacter, service }) => {
+const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => {
     const { _id, name, image, area, price, description, provider_name, provider_email, provider_image } = service;
 
+    useEffect(() => {
+        AOS.init(
+            {
+                duration: 1300,
+                once: true,
+            }
+        );
+    }, []);
+
     return (
-        <div className="shadow-md border-b-4 border-secondaryColor bg-primaryColor p-5 dark:border-white">
+        <div className="shadow-md border-b-4 border border-primaryColor  p-5 dark:border-white dark:bg-primaryColor" data-aos="fade-up" data-aos-delay={animationDelay}>
             <div className="flex items-center justify-between w-full p-4">
                 <h2 className="text-lg md:text-2xl font-semibold text-white capitalize">{name}</h2>
                 <div className="flex items-center gap-[5px]">
@@ -20,14 +32,14 @@ const ServiceCard = ({ serviceArea, maxCharacter, service }) => {
             />
 
             <div className="p-4">
-                <p className="text-white">{maxCharacter ? `${description.slice(0, 100)}...` : description}</p>
+                <p className="leading-normal">{maxCharacter ? `${description.slice(0, 100)}...` : description}</p>
                 <div className="mt-5 flex items-center justify-between w-full">
                     <div className="provider flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-primaryColor">
                             <img src={provider_image} alt="" className="w-full h-full rounded-full" />
                         </div>
-                        <div className="border-l-2 pl-2 font-medium">
-                            <h3>{provider_name}</h3>
+                        <div className="border-l-2 border-gray-400 pl-2 font-medium text-primaryColor">
+                            <h3 className="capitalize">{provider_name}</h3>
                             <span>{provider_email}</span>
                         </div>
                     </div>{/* provider */}

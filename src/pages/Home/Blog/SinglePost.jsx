@@ -1,10 +1,22 @@
+import AOS from "aos";
+import 'aos/dist/aos.css';
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
+import { useEffect } from "react";
 
-const SinglePost = ({tag, title, time,image}) => {
+const SinglePost = ({ tag, title, time, image, animationDelay }) => {
+    useEffect(() => {
+        AOS.init(
+            {
+                duration: 1600,
+                once: true, 
+            }
+        );
+    },[])
+
     return (
         <div
-            className="shadow-md hover:scale-[1.05] transition-all duration-300 overflow-hidden relative cursor-pointer group">
+            className="shadow-md hover:scale-[1.05] transition-all duration-300 overflow-hidden relative cursor-pointer group" data-aos="fade-up" data-aos-delay={animationDelay}>
 
             {/*  icons  */}
             <div
@@ -24,8 +36,8 @@ const SinglePost = ({tag, title, time,image}) => {
 
             {/*  texts  */}
             <div className="absolute bottom-0 left-0  pb-6 w-full text-center space-y-2">
-                <p className="uppercase text-gray-600">{tag}</p>
-                <h3 className="text-xl font-bold">{title}</h3>
+                <p className="uppercase text-gray-600 dark:text-white">{tag}</p>
+                <h3 className="text-xl font-bold dark:text-white">{title}</h3>
                 <p className="text-sm font-semibold text-primaryColor uppercase underline underline-offset-4">read more</p>
             </div>
         </div>
