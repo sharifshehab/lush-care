@@ -182,7 +182,6 @@ const Register = () => {
                         </button>
                         <p className="dark:text-white">Already have an account? <span className="text-primaryColor underline underline-offset-4"> <Link to={'/login'}>Login here</Link></span></p>
                     </div>
-
                 </div>
             </main>
         </>

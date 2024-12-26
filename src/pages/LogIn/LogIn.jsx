@@ -14,8 +14,10 @@ const LogIn = () => {
     const from = location.state ? location.state : '/';
 
     const onSubmit = async data => {
+        const email = data?.email;
+        const password = data?.password;
         try {
-            const userCredential = await handleEmailLogin(data.email, data.password);
+            const userCredential = await handleEmailLogin(email, password);
             const user = userCredential.user;
             reset();
             navigate(from, { replace: true });

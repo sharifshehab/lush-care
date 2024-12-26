@@ -5,9 +5,14 @@ import Hero from './Hero/Hero';
 import { Helmet } from 'react-helmet-async';
 import About from './About/About';
 import Blog from './Blog/Blog';
+import { useEffect } from 'react';
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const { data: services = [], isPending } = useQuery({
     queryKey: ['services'],
