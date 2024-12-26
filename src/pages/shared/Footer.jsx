@@ -1,7 +1,7 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { GrPinterest } from "react-icons/gr";
-import logo from "../../assets/logo3.png";
+import logo from "../../assets/footer-logo.webp";
 
 const Footer = () => {
     return (
@@ -14,29 +14,31 @@ const Footer = () => {
 
                         <div className="grid items-center text-center space-y-2 text-white">
                             <a href="mailto:svshuvo696@gmail.com">
-                                info@yousite.com
+                                info@lushcare.com
                             </a>
-                            <a href="tel:1234567890">
-                                123 (456) 7890
+                            <a href="tel:2561736647">
+                                256 (173) 6647
                             </a>
                         </div>
                     </nav>
 
-                    <aside className="flex flex-col items-center text-center space-y-5 order-first md:order-none">
+                    <aside className="flex flex-col items-center text-center order-first md:order-none">
                         <a href="#" className="text-xl font-bold flex flex-col items-center text-white">
                             <img src={logo} alt="" className="w-24 h-full" />
                             <p>Lush<span className="text-secondaryColor font-extrabold">Care</span></p>
                         </a>
-                        <p>
-                            ACME Industries Ltd.
+                        <p className="mt-2">
+                            Lush Care Ltd.
                             <br />
-                            Providing reliable tech since 1992
+                            Providing trusted and professional
+                            <br />
+                            lawn care services since 2019.
                         </p>
                     </aside>
 
                     <nav className="flex flex-col items-center space-y-2">
                         <h6 className="text-lg font-semibold text-white underline underline-offset-4 decoration-secondaryColor">Follow Us</h6>
-                        <p>connect with to grow</p>
+                        <p>Stay connected and grow with us!</p>
                         <div className="grid grid-flow-col items-center gap-4">
                             <a href="#" target="black">
                                 <BsFacebook size={26} color="#fff" />

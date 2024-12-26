@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import about01 from "../../../assets/about01.jpg";
-import about02 from "../../../assets/about02.jpg";
+import about02 from "../../../assets/about002.png";
 import Button from "../../../components/Button";
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -24,14 +24,13 @@ const About = () => {
                 </div>{/* images */}
                 <div className="content space-y-8">
                     <h2 className="text-5xl dark:text-white" data-aos="zoom-in" data-aos-duration="3000">
-                        Creating your
+                        Nurturing Lawns, 
                     </h2>
                     <h2 className="text-5xl text-primaryColor dark:text-white" data-aos="fade-up"
                         data-aos-duration="5000" >
-                        garden
+                        Growing Trust
                     </h2>
-                    <p className="dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <p className="dark:text-white leading-relaxed font-medium">At Lush Care Ltd., we take pride in transforming outdoor spaces into lush, vibrant havens. Since 2019, our dedicated team has been providing reliable and professional lawn care services tailored to meet the unique needs of our clients. With a commitment to excellence and a passion for greenery, we ensure your lawn thrives, leaving you more time to enjoy the beauty of your outdoor space.</p>
                     <div className="space-y-2 font-semibold pb-5 dark:text-white">
                         <p>Mon-Fri: 9 AM – 10 PM</p>
                         <p>Saturday: 9 AM – 6 PM</p>

@@ -214,7 +214,7 @@ const ManageServices = () => {
                         <table className="table">
                             {/* head */}
                             <thead>
-                                <tr className="dark:text-white">
+                                <tr className="text-sm dark:text-white">
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Area</th>

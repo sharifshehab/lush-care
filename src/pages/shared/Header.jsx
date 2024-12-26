@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 import { FaBarsStaggered } from "react-icons/fa6";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/header-logo.webp";
 
 
 const Header = () => {
@@ -39,11 +39,11 @@ const Header = () => {
                     <div className="flex items-center gap-5 text-white">
                         <div className="flex items-center gap-3">
                             <FaPhoneAlt />
-                            <span>+92 365 8854</span>
+                            <span>+256 173 6647</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <MdEmail />
-                            <span>info@domain</span>
+                            <span>info@lushcare.com</span>
                         </div>
                     </div>{/* social */}
 
@@ -114,11 +114,11 @@ const Header = () => {
                 </div>
                 {/* user */}
                 <div className="navbar-end">
+
+    
+
                     {user ?
                         <div className="flex items-center gap-2">
-                            <div className="form-control">
-                                <span className="dark:text-primaryColor">{user?.displayName}</span>
-                            </div>
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
@@ -132,7 +132,8 @@ const Header = () => {
                                 <ul
                                     tabIndex={0}
                                     className="menu menu-sm dropdown-content bg-base-100 rounded-none z-[1] mt-3 w-52 p-2 shadow">
-                                    <li><button onClick={() => handleLogOut()} className="underline underline-offset-4 decoration-primaryColor decoration-2 text-base">Logout</button></li>
+                                    <li><span className="text-base font-bold capitalize dark:text-primaryColor">{user?.displayName}</span></li>
+                                    <li><button onClick={() => handleLogOut()} className="underline underline-offset-8 decoration-primaryColor decoration-2">Logout</button></li>
                                 </ul>
                             </div>
                         </div> :

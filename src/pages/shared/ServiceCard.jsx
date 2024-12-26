@@ -18,7 +18,7 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
     return (
         <div className="shadow-md border-b-4 border border-primaryColor  p-5 dark:border-white dark:bg-primaryColor" data-aos="fade-up" data-aos-delay={animationDelay}>
             <div className="flex items-center justify-between w-full p-4">
-                <h2 className="text-lg md:text-2xl font-semibold text-white capitalize">{name}</h2>
+                <h2 className="text-lg md:text-2xl font-semibold text-primaryColor capitalize underline underline-offset-8 decoration-gray-300 decoration-dashed dark:text-white dark:decoration-secondaryColor">{name}</h2>
                 <div className="flex items-center gap-[5px]">
                     <h3 className="text-base md:text-[20px] text-white font-semibold flex items-center gap-1 underline underline-offset-4 decoration-double">
                         ${price}
@@ -38,7 +38,7 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
                         <div className="w-10 h-10 rounded-full bg-primaryColor">
                             <img src={provider_image} alt="" className="w-full h-full rounded-full" />
                         </div>
-                        <div className="border-l-2 border-gray-400 pl-2 font-medium text-primaryColor">
+                        <div className="border-l-2 border-gray-400 pl-2 font-medium text-primaryColor dark:text-white">
                             <h3 className="capitalize">{provider_name}</h3>
                             <span>{provider_email}</span>
                         </div>

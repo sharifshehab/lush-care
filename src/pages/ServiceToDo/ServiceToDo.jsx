@@ -54,7 +54,7 @@ const ServiceToDo = () => {
                         <table className="table">
                             {/* head */}
                             <thead>
-                                <tr className="dark:text-white">
+                                <tr className="text-sm dark:text-white">
                                     <th>Service Name</th>
                                     <th>Service Date</th>
                                     <th>Service Price</th>
