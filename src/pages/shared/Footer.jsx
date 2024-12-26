@@ -1,7 +1,12 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { GrPinterest } from "react-icons/gr";
+import { AiFillTwitterSquare } from "react-icons/ai";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
 import logo from "../../assets/footer-logo.webp";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -23,10 +28,10 @@ const Footer = () => {
                     </nav>
 
                     <aside className="flex flex-col items-center text-center order-first md:order-none">
-                        <a href="#" className="text-xl font-bold flex flex-col items-center text-white">
-                            <img src={logo} alt="" className="w-24 h-full" />
+                        <Link to={"/"} className="text-xl font-bold flex flex-col items-center text-white">
+                            <img src={logo} alt="" className="w-24 h-full"/>
                             <p>Lush<span className="text-secondaryColor font-extrabold">Care</span></p>
-                        </a>
+                        </Link>
                         <p className="mt-2">
                             Lush Care Ltd.
                             <br />
@@ -40,14 +45,14 @@ const Footer = () => {
                         <h6 className="text-lg font-semibold text-white underline underline-offset-4 decoration-secondaryColor">Follow Us</h6>
                         <p>Stay connected and grow with us!</p>
                         <div className="grid grid-flow-col items-center gap-4">
-                            <a href="#" target="black">
-                                <BsFacebook size={26} color="#fff" />
+                            <a href="https://www.facebook.com/svshuvo.4.0" target="black">
+                                <FaFacebookSquare size={28} color="#fff" />
                             </a>
-                            <a href="#" target="black">
-                                <AiFillTwitterCircle size={30} color="#fff" />
+                            <a href="https://x.com" target="black">
+                                <FaTwitterSquare size={27} color="#fff" />
                             </a>
-                            <a href="#" target="black">
-                                <GrPinterest size={26} color="#fff" />
+                            <a href="https://www.linkedin.com/in/sharifshehab" target="black">
+                                <BsLinkedin size={24} color="#fff" />
                             </a>
                         </div>
                     </nav>

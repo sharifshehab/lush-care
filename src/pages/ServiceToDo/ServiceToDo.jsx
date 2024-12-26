@@ -50,7 +50,7 @@ const ServiceToDo = () => {
                 <Breadcrumb></Breadcrumb>
                 <section className="container mx-auto px-4 min-h-screen">
                     <SectionTitle firstTitle="Scheduled" secondTitle="services"></SectionTitle>
-                    <div className="overflow-x-auto mt-14">
+                    <div className="overflow-x-auto mt-14 pb-32">
                         <table className="table">
                             {/* head */}
                             <thead>

@@ -30,7 +30,7 @@ const About = () => {
                         data-aos-duration="5000" >
                         Growing Trust
                     </h2>
-                    <p className="dark:text-white leading-relaxed font-medium">At Lush Care Ltd., we take pride in transforming outdoor spaces into lush, vibrant havens. Since 2019, our dedicated team has been providing reliable and professional lawn care services tailored to meet the unique needs of our clients. With a commitment to excellence and a passion for greenery, we ensure your lawn thrives, leaving you more time to enjoy the beauty of your outdoor space.</p>
+                    <p className="dark:text-white leading-relaxed font-medium" data-aos="zoom-in">At Lush Care Ltd., we take pride in transforming outdoor spaces into lush, vibrant havens. Since 2019, our dedicated team has been providing reliable and professional lawn care services tailored to meet the unique needs of our clients. With a commitment to excellence and a passion for greenery, we ensure your lawn thrives, leaving you more time to enjoy the beauty of your outdoor space.</p>
                     <div className="space-y-2 font-semibold pb-5 dark:text-white">
                         <p>Mon-Fri: 9 AM – 10 PM</p>
                         <p>Saturday: 9 AM – 6 PM</p>

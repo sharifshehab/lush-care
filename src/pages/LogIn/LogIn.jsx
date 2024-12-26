@@ -86,7 +86,7 @@ const LogIn = () => {
                             </button>
                         </div>
                     </form>
-
+                    <h3 className="dark:text-white">Or</h3>
                     <div className="flex items-center flex-col space-y-5">
                         <button onClick={googleSignIn}
                             className="bg-[#3B9DF8] text-white  py-[5px] pl-2 pr-4 flex items-center gap-3  hover:bg-blue-500 transition-all duration-200">

@@ -84,7 +84,7 @@ const AllServices = () => {
                         </div>
                     </div>
                     <div className="mt-12 mb-40 space-y-12">
-                        {services.map(service => <ServiceCard key={service._id} service={service} serviceArea={true}></ServiceCard>)}
+                        {services.map(service => <ServiceCard key={service._id} service={service} serviceArea={true} maxCharacter={true}></ServiceCard>)}
                     </div>
                 </section>
             </main>

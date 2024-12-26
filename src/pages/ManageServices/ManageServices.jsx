@@ -187,7 +187,7 @@ const ManageServices = () => {
                                                 {...register("price", { required: "Service price is required" })}
                                                 placeholder="Write service price"
                                             />
-                                            {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+                                            {errors.price && <span className="text-red-500 text-sm">{errors.price.message}</span>}
                                         </div>
                                     </div>
 
@@ -195,8 +195,10 @@ const ManageServices = () => {
                                         <label className="text-[1rem] text-gray-700">Service Description</label>
                                         <textarea
                                             className="peer min-h-[100px] border-gray-300 border-b resize-none outline-none w-full text-primaryColor transition-colors focus:border-primaryColor duration-300"
+                                            placeholder="Write service description"
                                             {...register("description", { required: "Service description is required" })}
                                         ></textarea>
+                                        {errors.description && <span className="text-red-500 text-sm">{errors.description.message}</span>}
                                     </div>
 
                                     <div className="w-full flex items-center justify-center  mt-5">
@@ -210,7 +212,7 @@ const ManageServices = () => {
                         </div>
                     </div>
 
-                    <div className="overflow-x-auto">
+                    <div className="overflow-x-auto pb-32">
                         <table className="table">
                             {/* head */}
                             <thead>

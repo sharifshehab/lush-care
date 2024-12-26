@@ -72,7 +72,7 @@ const Header = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-none z-[1] mt-3 w-52 p-2 shadow left-1">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-none mt-3 w-52 p-2 shadow left-1 z-20">
                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2  decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/'>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/all-services'>Services</NavLink></li>
                             <li>
@@ -88,10 +88,11 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <a href="#" className="text-sm md:text-base font-bold flex flex-col items-center dark:text-white">
-                        <img src={logo} alt="" className="w-12 md:w-[70px] h-full"/>
-                        <p>Lush<span className="text-primaryColor font-extrabold">Care</span></p>
-                    </a>
+                    <Link to={"/"} className="text-sm md:text-base font-bold flex flex-col items-center dark:text-white">
+                            <img src={logo} alt="" className="w-12 md:w-[70px] h-full" />
+                            <p>Lush<span className="text-primaryColor font-extrabold">Care</span></p>
+                    </Link>
+                
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold text-base py-8">

@@ -20,7 +20,7 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
             <div className="flex items-center justify-between w-full p-4">
                 <h2 className="text-lg md:text-2xl font-semibold text-primaryColor capitalize underline underline-offset-8 decoration-gray-300 decoration-dashed dark:text-white dark:decoration-secondaryColor">{name}</h2>
                 <div className="flex items-center gap-[5px]">
-                    <h3 className="text-base md:text-[20px] text-white font-semibold flex items-center gap-1 underline underline-offset-4 decoration-double">
+                    <h3 className="text-base md:text-[20px] text-secondaryColor font-semibold flex items-center gap-1 underline underline-offset-4 decoration-double">
                         ${price}
                     </h3>
                 </div>
@@ -31,15 +31,15 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
                 className="w-full h-72 object-cover"
             />
 
-            <div className="p-4">
+            <div className="p-4 space-y-3">
                 <p className="leading-normal">{maxCharacter ? `${description.slice(0, 100)}...` : description}</p>
-                <div className="mt-5 flex items-center justify-between w-full">
+                <div className="mt-5 flex flex-col md:flex-row items-center justify-between space-y-5 w-full">
                     <div className="provider flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-primaryColor">
                             <img src={provider_image} alt="" className="w-full h-full rounded-full" />
                         </div>
                         <div className="border-l-2 border-gray-400 pl-2 font-medium text-primaryColor dark:text-white">
-                            <h3 className="capitalize">{provider_name}</h3>
+                            <h3 className="capitalize font-bold">{provider_name}</h3>
                             <span>{provider_email}</span>
                         </div>
                     </div>{/* provider */}
@@ -53,7 +53,7 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
                     serviceArea && <div className="flex items-center justify-center gap-2">
                         
                         <div>
-                            <p className="text-darkBg"><span className="font-bold text-white">Service Area:</span> {area}</p>
+                            <p className="text-darkBg"><span className="font-bold text-primaryColor dark:text-white">Service Area:</span> {area}</p>
                         </div>
                     </div>
                 }

@@ -51,7 +51,7 @@ const AddService = () => {
         <>
             <Helmet><title>LushCare - Add Service</title></Helmet>
             <main>
-                <div className="flex flex-col items-center justify-center h-screen space-y-10">
+                <section className="flex flex-col items-center justify-center space-y-10 mb-20">
                     <SectionTitle firstTitle="add" secondTitle="service"></SectionTitle>
 
                     <form className="w-full lg:w-3/6 px-5" onSubmit={handleSubmit(onSubmit)}>
@@ -111,8 +111,10 @@ const AddService = () => {
                             <label className="text-lg dark:text-primaryColor">Service Description</label>
                             <textarea
                                 className="peer min-h-[100px] border-gray-300 border-b resize-none outline-none w-full text-primaryColor transition-colors focus:border-primaryColor duration-300 p-3"
+                                placeholder="Write service description"
                                 {...register("description", { required: "Service description is required" })}
                             ></textarea>
+                            {errors.description && <span className="text-red-500 text-sm">{errors.description.message}</span>}
                         </div>
 
                         <div className="w-full flex items-center justify-center  mt-5">
@@ -122,7 +124,7 @@ const AddService = () => {
                             </button>
                         </div>
                     </form>
-                </div>
+                </section>
             </main>
         </>
     );

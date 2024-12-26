@@ -26,7 +26,7 @@ const TableRow = ({ service, handleDelete, handleModal }) => {
                 </td>{/* description */}
                 <th>
                     <div className="flex flex-col md:flex-row items-center gap-x-2">
-                        <button onClick={() => handleModal(_id)} className="btn btn-neutral bg-primaryColor rounded-none text-white btn-xs">Edit</button>
+                    <button onClick={() => handleModal(_id)} className="btn btn-neutral bg-primaryColor rounded-none text-white btn-xs">Edit</button>
                         <span className="hidden md:table-cell">|</span>
                         <span className="table-cell md:hidden">-</span>
                     <button onClick={() => handleDelete(_id)} className="btn btn-warning rounded-none btn-xs">Delete</button>
