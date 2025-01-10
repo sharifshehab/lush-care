@@ -36,7 +36,7 @@ const Newsletter = () => {
 
                             
                             <b className="sm:text-3xl text-primaryColor">For latest updates</b>
-                            <p className="mt-3">Join our newest and get weekly updates on the
+                            <p className="mt-3">Join our newsletter and get weekly updates on the
                                 gardening, case studies and tips right
                                 in your mailbox.</p>
                             </div>

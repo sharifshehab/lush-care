@@ -13,6 +13,7 @@ import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import BookedServices from "../pages/BookedServices/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo/ServiceToDo";
 import AllBlogs from "../pages/AllBlogs/AllBlogs";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path:'register',
                 element: <Register></Register>
+            },
+            {
+                path:'contact',
+                element: <Contact></Contact>
             },
         ]
     }

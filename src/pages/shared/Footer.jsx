@@ -1,7 +1,4 @@
-import { BsFacebook } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { GrPinterest } from "react-icons/gr";
-import { AiFillTwitterSquare } from "react-icons/ai";
+
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";

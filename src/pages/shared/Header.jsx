@@ -78,17 +78,20 @@ const Header = () => {
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2  decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/'>Home</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/all-services'>Services</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li>
-                                <li>
-                                    <details>
-                                        <summary>Dashboard</summary>
-                                        <ul className="p-2">
-                                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/add-service'>Add Service</NavLink></li>
-                                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/manage-services'>Manage Services</NavLink></li>
-                                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/booked-services'>Booked Services</NavLink></li>
-                                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/current-services'>Service-To-Do</NavLink></li>
-                                        </ul>
-                                    </details>
-                                </li>
+                                {user &&
+                                    <li>
+                                        <details>
+                                            <summary>Dashboard</summary>
+                                            <ul className="p-2">
+                                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/add-service'>Add Service</NavLink></li>
+                                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/manage-services'>Manage Services</NavLink></li>
+                                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/booked-services'>Booked Services</NavLink></li>
+                                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/current-services'>Service-To-Do</NavLink></li>
+                                            </ul>
+                                        </details>
+                                    </li>
+                                }
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/contact'>Contact</NavLink></li>
                             </ul>
                         </div>
                         <Link to={"/"} className="text-sm md:text-base font-bold flex flex-col items-center dark:text-white">
@@ -115,6 +118,7 @@ const Header = () => {
                                     </details>
                                 </li>
                             }
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/contact'>Contact</NavLink></li>
                         </ul>
                     </div>
                     {/* user */}

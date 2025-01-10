@@ -13,29 +13,34 @@ import Breadcrumb from "../shared/breadcrumb";
 
 const AllServices = () => {
     const axiosPublic = useAxiosPublic();
-
-    const { data: initialData = [], isPending } = useQuery({
-        queryKey: ['services'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/services');
-            return res.data;
-        }
-    });
+    const [sortOrder, setSortOrder] = useState('desc');
+    const [search, setSearch] = useState('');
+    const [inputFocus, setInputFocus] = useState(false);
+    const [services, setServices] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     },[])
 
-    const [search, setSearch] = useState('');
-    const [inputFocus, setInputFocus] = useState(false);
+    useEffect(() => {
+        axiosPublic.get(`/services?sortBy=${sortOrder}`)
+            .then(res => {
+                setServices(res.data);
+                setLoading(false);
+            })
+    }, [sortOrder]);
 
-    const [services, setServices] = useState(initialData);
+
     useEffect(() => {
         axiosPublic.get(`/services?search=${search}`)
-            .then(res => setServices(res.data))
+            .then(res => {
+                setServices(res.data);
+                setLoading(false);
+            })
     }, [search]);
 
-    if (isPending) {
+    if (loading) {
         return <div className="flex items-center justify-center h-screen">
             <span className="loading loading-ring loading-lg text-primaryColor"></span>
         </div>
@@ -82,9 +87,22 @@ const AllServices = () => {
                                 )
                             }
                         </div>
+
+                        <div className="flex items-center justify-between mt-5">
+                            <h4 className="text-2xl underline underline-offset-8 decoration-2 decoration-primaryColor dark:text-white">Total Services: {services?.length}</h4>
+                            <select
+                                value={sortOrder}
+                                onChange={(e) => setSortOrder(e.target.value)}
+                                className="border p-2 focus-visible:outline-none focus-visible:border focus-visible:border-primaryColor"
+                            >
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </div>
+
                     </div>
                     <div className="mt-12 mb-40 grid grid-cols-1 lg:grid-cols-4 gap-5 ">
-                        {services.map(service => <ServiceCard key={service._id} service={service} serviceArea={true} maxCharacter={true}></ServiceCard>)}
+                        {services?.map(service => <ServiceCard key={service._id} service={service} serviceArea={true} maxCharacter={true}></ServiceCard>)}
                     </div>
                 </section>
             </main>
