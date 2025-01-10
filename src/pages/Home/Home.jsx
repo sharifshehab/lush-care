@@ -17,7 +17,7 @@ const Home = () => {
   const { data: services = [], isPending } = useQuery({
     queryKey: ['services'],
     queryFn: async () => {
-      const res = await axiosPublic.get('/services?limit=6');
+      const res = await axiosPublic.get('/services?limit=8');
       return res.data;
     }
   });
