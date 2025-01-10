@@ -1,0 +1,51 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-------------------- 
+  custom properties 
+--------------------*/
+:root {
+  --primary-color: #7aa300;
+  --secondary-color: #333333;
+}
+
+/*-------------------- 
+  preset properties 
+--------------------*/
+body {
+  font-family: "Noto Serif", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--secondary-color);
+  background: none repeat scroll 0 0;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+main>section {
+  padding-top: 130px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+h2 {
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  font-weight: 800;
+}
