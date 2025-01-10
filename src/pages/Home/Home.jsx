@@ -6,6 +6,8 @@ import { Helmet } from 'react-helmet-async';
 import About from './About/About';
 import Blog from './Blog/Blog';
 import { useEffect } from 'react';
+import Faq from './Faq/Faq';
+import Newsletter from './Newsletter/Newsletter';
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
@@ -35,7 +37,8 @@ const Home = () => {
         <Hero></Hero>
         <About></About>
         <PopularServices services={services}></PopularServices>
-        <Blog></Blog>
+        <Faq></Faq>
+        <Newsletter></Newsletter>
       </main>
     </>
   );

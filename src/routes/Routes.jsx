@@ -12,6 +12,7 @@ import ManageServices from "../pages/ManageServices/ManageServices";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import BookedServices from "../pages/BookedServices/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo/ServiceToDo";
+import AllBlogs from "../pages/AllBlogs/AllBlogs";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>
+            },
+            {
+                path:'blogs',
+                element: <AllBlogs></AllBlogs>
             },
             {
                 path:'all-services',
