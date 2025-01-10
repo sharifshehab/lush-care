@@ -89,15 +89,18 @@ const AllServices = () => {
                         </div>
 
                         <div className="flex items-center justify-between mt-5">
-                            <h4 className="text-2xl underline underline-offset-8 decoration-2 decoration-primaryColor dark:text-white">Total Services: {services?.length}</h4>
-                            <select
-                                value={sortOrder}
-                                onChange={(e) => setSortOrder(e.target.value)}
-                                className="border p-2 focus-visible:outline-none focus-visible:border focus-visible:border-primaryColor"
-                            >
-                                <option value="asc">Ascending</option>
-                                <option value="desc">Descending</option>
-                            </select>
+                            <h4 className="text-xl underline underline-offset-8 decoration-2 decoration-primaryColor font-bold dark:text-white">Total Services: {services?.length}</h4>
+                            <div className="flex items-center justify-center gap-3">
+                                <h3 className="text-primaryColor text-xl font-bold">Sort By</h3>
+                                <select
+                                    value={sortOrder}
+                                    onChange={(e) => setSortOrder(e.target.value)}
+                                    className="border p-2 focus-visible:outline-none focus-visible:border focus-visible:border-primaryColor"
+                                >
+                                    <option value="asc">Lowest Price</option>
+                                    <option value="desc">Highest Price</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>

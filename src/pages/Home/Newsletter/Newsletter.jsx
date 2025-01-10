@@ -1,5 +1,5 @@
 import SectionTitle from "../../../components/SectionTitle";
-import mailBox from "../../../assets/mail-box.png";
+import mailBox from "../../../assets/mail-box.svg";
 // react icons
 import { AiOutlineMail } from "react-icons/ai";
 import AOS from "aos";
@@ -28,7 +28,7 @@ const Newsletter = () => {
                     <div className="flex lg:flex-row flex-col items-center justify-between gap-[20px]">
                         <div className="w-full sm:w-[80%] lg:w-[50%]" data-aos="fade-right">
                             <img src={mailBox} alt="image"
-                                className="w-full" />
+                                className="" />
                         </div>
 
                         <div className="w-full lg:w-[50%]">
@@ -36,9 +36,7 @@ const Newsletter = () => {
 
                             
                             <b className="sm:text-3xl text-primaryColor">For latest updates</b>
-                            <p className="mt-3">Join our newsletter and get weekly updates on the
-                                gardening, case studies and tips right
-                                in your mailbox.</p>
+                            <p className="mt-3 dark:text-white">Subscribe to our newsletter and receive weekly insights, gardening tips, case studies, and more, delivered straight to your inbox.</p>
                             </div>
                             <form className="mt-5" onSubmit={newsForm}>
                                 <div className="relative" data-aos="zoom-in" >

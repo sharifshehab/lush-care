@@ -50,8 +50,8 @@ const Header = () => {
                         </div>{/* social */}
 
                         <div className="flex items-center space-x-3">
-                            <div className="px-6 py-3 bg-white text-primaryColor font-bold inline-block hover:bg-secondaryColor hover:text-primaryColor duration-300">
-                                <a className="#">Quote Request</a>
+                            <div className="px-6 py-3 bg-white text-primaryColor font-bold inline-block hover:bg-secondaryColor hover:text-white duration-500">
+                                <Link to={'/contact'}>Quote Request</Link>
                             </div>
                             <button onClick={() => darkModeHandler()}>
                                 {
@@ -77,7 +77,7 @@ const Header = () => {
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-none mt-3 w-52 p-2 shadow left-1 z-20">
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2  decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/'>Home</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/all-services'>Services</NavLink></li>
-                                <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li>
+                                {/* <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li> */}
                                 {user &&
                                     <li>
                                         <details>
@@ -104,7 +104,7 @@ const Header = () => {
                         <ul className="menu menu-horizontal px-1 font-semibold text-base py-8">
                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent dark:text-white'} to='/'>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent dark:text-white'} to='/all-services'>Services</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li>
+                            {/* <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li> */}
                             {user &&
                                 <li>
                                     <details>
@@ -118,7 +118,7 @@ const Header = () => {
                                     </details>
                                 </li>
                             }
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/contact'>Contact</NavLink></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent dark:text-white'} to='/contact'>Contact</NavLink></li>
                         </ul>
                     </div>
                     {/* user */}

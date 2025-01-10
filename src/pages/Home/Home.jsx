@@ -37,6 +37,8 @@ const Home = () => {
         <Hero></Hero>
         <About></About>
         <PopularServices services={services}></PopularServices>
+        {/* TODO: make the blogs dynamic */}
+        {/* <Blog></Blog> */}
         <Faq></Faq>
         <Newsletter></Newsletter>
       </main>

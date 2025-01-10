@@ -22,7 +22,7 @@ const Hero = () => {
                         <p className="text-white text-lg md:text-[27px] mt-3">Trusted Expertise</p>
                     </Slide>
                     <Zoom delay={700} cascade damping={0.3} duration={1700} triggerOnce={true}>
-                        <h1 className="text-2xl md:text-5xl lg:text-[82px] capitalize text-primaryColor font-semibold my-2 lg:my-12">Lush Greens, Happy Scenes</h1>
+                        <h1 className="text-2xl md:text-5xl lg:text-[82px] capitalize text-primaryColor font-semibold my-2 lg:my-10">Lush Greens, Happy Scenes</h1>
                     </Zoom>
                     <Slide direction="down" cascade damping={0.3} duration={1400} triggerOnce={true}>
                         <div className="flex items-center justify-center space-x-4 mb-3">
