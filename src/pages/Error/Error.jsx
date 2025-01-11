@@ -11,7 +11,7 @@ const Error = () => {
                 <h1 className="text-[2rem] sm:text-[3rem] font-[600] text-white w-full lg:w-[50%]">Go Home , You’re
                     Lost!</h1>
 
-            <button onClick={() => navigate('/')} className="py-3 px-8 w-max rounded-full bg-[#92E3A9] hover:bg-[#4ec46f] mt-5">BACK TO
+            <button onClick={() => navigate('/')} className="py-3 px-8 w-max text-white bg-primaryColor hover:bg-[#96c900] mt-5 duration-300">BACK TO
                     HOME
                 </button>
             </div >

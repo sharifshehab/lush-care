@@ -34,7 +34,7 @@ const Header = () => {
     }
 
     return (
-        <Sticky innerZ={10}>
+        <Sticky innerZ={15}>
             <header className=" bg-white border-b dark:bg-darkBg">
                 <div className="top-header bg-primaryColor">
                     <div className="container mx-auto px-4 pt-3 md:pt-0 flex flex-col md:flex-row items-center justify-between gap-3">
@@ -74,7 +74,7 @@ const Header = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-none mt-3 w-52 p-2 shadow left-1 z-20">
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-none mt-3 w-52 p-2 shadow left-1">
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2  decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/'>Home</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/all-services'>Services</NavLink></li>
                                 {/* <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/blogs'>Blog</NavLink></li> */}

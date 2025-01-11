@@ -24,7 +24,7 @@ const Newsletter = () => {
         <section className="container mx-auto px-4">
             <SectionTitle firstTitle="subscribe" secondTitle="now!"></SectionTitle>
 
-                <div className="mb-20">
+                <div className="mb-20 mt-5">
                     <div className="flex lg:flex-row flex-col items-center justify-between gap-[20px]">
                         <div className="w-full sm:w-[80%] lg:w-[50%]" data-aos="fade-right">
                             <img src={mailBox} alt="image"
