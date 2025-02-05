@@ -7,9 +7,9 @@ LushCare is a user-friendly platform designed to simplify your lawn care needs. 
 
 ## Technologies used:
 - **React Router**
+- **Context API**
 - **Firebase**
 - **Tanstack Query**
-- **JWT**
 
 ## Key features:
 1. **Toggle theme color between dark and light**
