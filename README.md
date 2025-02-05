@@ -1,4 +1,7 @@
 # LushCare - Exceptional Lawn Services at Your Fingertips
+<div align="center">
+  <img height="650" width="100%" src="https://i.ibb.co.com/dg0YhZx/lush-care.webp"  />
+</div>
 
 LushCare is a user-friendly platform designed to simplify your lawn care needs. We are dedicated to providing reliable, transparent, and timely lawn mowing services that fit your schedule and budget. Our website connects you with professional lawn mowing services tailored to your requirements. Find the most suitable and experienced lawn care providers in your area, And easily schedule your lawn mowing services online. Visit LushCare today and let us handle your lawn care while you enjoy your beautiful, stress-free yard!
 
