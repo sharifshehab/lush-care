@@ -10,6 +10,7 @@ LushCare is a user-friendly platform designed to simplify your lawn care needs. 
 - **Context API**
 - **Firebase**
 - **Tanstack Query**
+- **Axios**
 
 ## Key features:
 1. **Toggle theme color between dark and light**
