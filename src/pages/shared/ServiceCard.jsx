@@ -52,7 +52,7 @@ const ServiceCard = ({ serviceArea, maxCharacter, service, animationDelay }) => 
                     </div> */}
 
                     <Link to={`/service-details/${_id}`}>
-                        <button className="py-2 px-6  text-primaryColor font-semibold bg-white border border-secondaryColor hover:bg-primaryColor hover:text-white duration-500">View Detail</button>
+                        <button className="py-2 px-6  text-primaryColor font-semibold bg-white border-2 border-primaryColor hover:bg-primaryColor hover:text-white duration-500">View Detail</button>
                     </Link>
                 </div>
 
