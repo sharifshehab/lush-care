@@ -25,7 +25,9 @@ const LogIn = () => {
             Swal.fire({
                 title: "Log-in Error",
                 text: `We encountered an error while trying to log in. Please try again letter. (Error: ${error.message})`,
-                icon: "error"
+                icon: "error",
+                confirmButtonText: "Close",
+                confirmButtonColor: "#7aa300"
             });
         } finally {
             setLoading(false)
