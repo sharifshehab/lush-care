@@ -20,7 +20,7 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center space-y-5 md:space-y-28">
                 <div className="images relative mx-auto lg:mx-0">
                     <img src={about01} alt="" className="relative" data-aos="fade-up" />
-                    <img src={about02} alt="" className="absolute top-56 right-24 hidden md:block" data-aos="fade-up" data-aos-delay={100} />
+                    <img src={about02} alt="" className="absolute top-56 right-24 hidden md:block border-l-2 border-t-2" data-aos="fade-up" data-aos-delay={100} />
                 </div>{/* images */}
                 <div className="content space-y-8">
                     <div className="space-y-5">
