@@ -109,7 +109,7 @@ const Header = () => {
                                 <li>
                                     <details>
                                         <summary className="dark:text-white">Dashboard</summary>
-                                        <ul className="flex flex-wrap w-44 rounded-none z-10">
+                                        <ul className="flex flex-wrap w-44 rounded-none z-10 border-t-2 border-primaryColor cMT">
                                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/add-service'>Add Service</NavLink></li>
                                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/manage-services'>Manage Services</NavLink></li>
                                             <li><NavLink className={({ isActive }) => isActive ? 'text-primaryColor underline underline-offset-4 decoration-2 decoration-primaryColor focus:bg-transparent focus:text-primaryColor' : 'hover:text-primaryColor hover:bg-transparent'} to='/booked-services'>Booked Services</NavLink></li>
