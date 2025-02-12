@@ -54,3 +54,9 @@ h2 {
 .cMT{
   margin-top: 40px !important;
 }
+
+/* override default style for active menu items */
+.menu li > *:not(ul, .menu-title, details, .btn):active, .menu li > *:not(ul, .menu-title, details, .btn).active, .menu li > details > summary:active {
+    background-color: transparent !important;
+    color: var(--primary-color);
+}
