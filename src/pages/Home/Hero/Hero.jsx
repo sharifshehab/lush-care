@@ -11,7 +11,7 @@ const Hero = () => {
     return (
         <>
             <div className="w-full relative">
-                <div className="w-full lg:h-[700px]">
+                <div className="w-full lg:h-[750px]">
                     <img src={banner} alt="image" className=" h-full w-full" />
                 </div>{/* image */}
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
